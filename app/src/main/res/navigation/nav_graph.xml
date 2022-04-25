@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/assetListFragment">
+
+    <fragment
+        android:id="@+id/assetListFragment"
+        android:name="com.ryder.mvvmdemo.ui.list.AssetListFragment"
+        android:label="fragment_asset_list"
+        tools:layout="@layout/fragment_asset_list">
+        <action
+            android:id="@+id/action_assetListFragment_to_assetDetailFragment"
+            app:destination="@id/assetDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assetDetailFragment"
+        android:name="com.ryder.mvvmdemo.ui.detail.AssetDetailFragment"
+        tools:layout="@layout/fragment_asset_detail">
+        <argument
+            android:name="tokenId"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="contractAddress"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+</navigation>
